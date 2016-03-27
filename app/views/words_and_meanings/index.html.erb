@@ -1,0 +1,20 @@
+<%= link_to("Add New Word", {:action => 'new'}) %>
+<table>
+	<tr>
+		<th>Words</th>
+		<th>Action</th>
+	</tr>
+
+	
+	<% @words.each do |word|%>
+		<tr>
+			<td><%= word.word %></td>
+			<td>
+				<%= link_to('Show', {:action => 'show', :id => word.id})%>
+				<%= link_to('Edit', {:action => 'edit', :id => word.id})%>
+				<%= link_to('Delete', {:action => 'destroy', :id => word.id})%>
+			</td>
+				
+		</tr>
+	<% end %>
+</table>

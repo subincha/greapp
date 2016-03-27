@@ -1,0 +1,11 @@
+<div class = "subjects new">
+	<h2>Update Word</h2>
+	<%= form_for(:word, :url => {:controller => 'words', :action => 'update', :id => @word.id}) do |f| %>
+		<h3>Word</h3>
+		<%= render(:partial => "add_word", :locals => {:f => f}) %>
+
+		<div class = "form-buttons">
+			<%= submit_tag("Update Word") %>
+		</div>
+	<% end %>
+</div>

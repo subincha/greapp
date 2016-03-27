@@ -1,0 +1,42 @@
+<% count = 0 %>
+<div class = "show word">
+	<h2>Word and Meaning(s)</h2>
+		<table>
+			<tr>
+				<th>Word : </th>
+				<td><%= @word.word %></td>
+			</tr>
+			<% if !@word.synonym.blank? %>
+			<tr>
+				<th>Synonym : </th>
+				<td><%= @word.synonym %></td>
+			</tr>
+			<% end %>
+
+			<% if !@word.antonym.blank? %>
+			<tr>
+				<th>Antonym : </th>
+				<td><%= @word.antonym %></td>
+			</tr>
+			<% end %>
+			<tr>
+				<td><%= link_to('Edit', {:controller => 'words_and_meanings', :action => 'edit', :id => @word.id})%>
+				<%= link_to('Delete', {:controller => 'words_and_meanings', :action => 'destroy', :id => @word.id})%></td>
+			</tr>		
+		</table>
+
+
+		<h3>Meaning(s)</h3>
+		<% @meanings.each do |meaning| %>
+
+			<p><%= count += 1 %>) <% if meaning.figurative%>(fig.)<% end %> |<%= meaning.form%>| <%= meaning.meaning %></p>
+			<% if !meaning.example.blank? %><p>Example: <%= meaning.example %></p><% end %>
+			<p>
+				<%= link_to('Edit', {:controller => 'meanings', :action => 'edit', :id => meaning.id, :word_id => @word.id})%>
+				<%= link_to('Delete', {:controller => 'meanings', :action => 'destroy', :id => meaning.id, :word_id => @word.id})%>
+			</p>
+		<% end %>
+
+		<%= link_to("Add new meaning", {:controller => "meanings", :action => "new", :id => @word.id}) %>
+	
+</div>

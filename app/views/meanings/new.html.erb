@@ -1,0 +1,12 @@
+<div class = "subjects new">
+	<h2>Create Meaning for</h2>
+	<p>Word : <%= @word.word %> </p>
+	<%= form_for(:meaning, :url => {:controller => 'meanings', :action => 'create', :id => @word.id}) do |f| %>
+		<h3>Meaning</h3>
+		<%= render(:partial => "words_and_meanings/add_meaning", :locals => {:f => f}) %>
+
+		<div class = "form-buttons">
+			<%= submit_tag("Create Meaning") %>
+		</div>
+	<% end %>
+</div>

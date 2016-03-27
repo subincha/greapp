@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GreApp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<% if !flash[:notice].blank? %>
+		<div class = "notice">
+			<%= flash[:notice] %>
+		</div>
+	<% end %>
+<%= link_to("<<Words Page", {:controller => 'words_and_meanings', :action => 'index'}) %></br>
+<%= yield %>
+
+</body>
+</html>

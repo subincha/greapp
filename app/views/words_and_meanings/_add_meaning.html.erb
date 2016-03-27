@@ -1,0 +1,21 @@
+<table>
+			<tr>
+				<th>Figurative</th>
+				<td><%= f.radio_button(:figurative, "true",) %>True</td>
+				<td><%= f.radio_button(:figurative, "false", :checked => true) %>False</td>
+			</tr>
+
+			<tr>
+				<th>Type</th>
+				<td><%= f.select(:form, ['adjective', 'adverb', 'noun', 'verb'], :selected => 'noun') %></td>
+			</tr>
+
+			<tr>
+				<th>Meaning</th>
+				<td><%= f.text_area(:meaning) %></td>
+			</tr>
+			<tr>
+				<th>Example</th>
+				<td><%= f.text_area(:example) %></td>
+			</tr>
+</table>
