@@ -1,0 +1,52 @@
+<!-- <div class = "subjects new">
+	<%= form_for(:user, :url => {:controller => 'mobile_login', :action => 'mobile_login'}) do |f| %>
+	<h3>User Login</h3>
+	<table>
+		<tr>
+			<th>Username</th>
+			<td><%= f.text_field(:username) %></td>
+		</tr>
+
+		<tr>
+			<th>Password</th>
+			<td><%= f.text_field(:password) %></td>
+		</tr>
+	
+	</table>
+	<div class = "form-buttons">
+		<%= submit_tag("Login") %>
+	</div>
+	<% end %>
+</div> -->
+<h2>Admin panel</h2>
+</br>
+<%= link_to("view admin(s)", {:controller => 'admin_users', :action => 'index'}) %></br>
+<%= link_to("view users(s)", {:controller => 'users', :action => 'index'}) %></br>
+<%= link_to("view words", {:controller => 'words_and_meanings', :action => 'index'}) %></br>
+<!-- <div>
+	<form action ="/mobile_login/mobile_login" method = "post">
+		<input type="text" name="username"></br>
+		<input type="text" name="password"></br>
+		<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+		<input type="submit" name="submit" value="submit">
+	</form>
+</div>
+
+<h6>request update</h6>
+<div>
+	<form action ="/mobile_login/mobile_update" method = "post">
+		<input type="text" name="word_id" value = "1"></br>
+		<input type="text" name="meaning_id" value = "1"></br>
+		<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+		<input type="submit" name="submit" value="submit">
+	</form>
+</div>
+
+<h6>logout</h6>
+<div>
+	<form action ="/mobile_login/mobile_logout" method = "post">
+		<input type="text" name="username"></br>
+		<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+		<input type="submit" name="submit" value="submit">
+	</form>
+</div> -->

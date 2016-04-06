@@ -1,23 +1,7 @@
 Rails.application.routes.draw do
-  get 'meanings/index'
-
-  get 'meanings/show'
-
-  get 'meanings/new'
-
-  get 'meanings/edit'
-
-  get 'meanings/delete'
-
-  get 'words/index'
-
-  get 'words/show'
-
-  get 'words/new'
-
-  get 'words/edit'
-
-  get 'words/delete'
+  resources :users
+  resources :admin_users
+  get 'admin', :to => "access#index"
 
   match ':controller(/:action(/:id))', :via => [:get, :post]
 

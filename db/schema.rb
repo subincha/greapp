@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160324155732) do
+ActiveRecord::Schema.define(version: 20160401063352) do
+
+  create_table "admin_users", force: :cascade do |t|
+    t.string   "username",        limit: 255
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.string   "password_digest", limit: 255
+  end
 
   create_table "meanings", force: :cascade do |t|
     t.integer  "word_id",    limit: 4
@@ -24,6 +31,15 @@ ActiveRecord::Schema.define(version: 20160324155732) do
   end
 
   add_index "meanings", ["word_id"], name: "index_meanings_on_word_id", using: :btree
+
+  create_table "users", force: :cascade do |t|
+    t.string   "username",        limit: 255
+    t.boolean  "logged_in"
+    t.integer  "update_count",    limit: 4
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.string   "password_digest", limit: 255
+  end
 
   create_table "words", force: :cascade do |t|
     t.string   "word",       limit: 255

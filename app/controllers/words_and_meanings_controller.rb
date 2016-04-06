@@ -1,5 +1,5 @@
 class WordsAndMeaningsController < ApplicationController
-  
+  before_action :confirm_logged_in
   def index
     @words = Word.all.order("words.word ASC")
   end
@@ -39,17 +39,18 @@ class WordsAndMeaningsController < ApplicationController
 
   def destroy
     word = Word.find(params[:id]).destroy
+    Meaning.where(:word_id => params[:id]).destroy_all
     flash[:notice] = "Word '#{word.word}' has been destroyed succesfully"
     redirect_to(:action => 'index')
   end
 
   private 
-    def word_params
-      params.require(:word).permit(:word, :synonym, :antonym)
-    end
+  def word_params
+    params.require(:word).permit(:word, :synonym, :antonym)
+  end
 
   private
-    def meaning_params
-      params.require(:word).permit(:figurative, :meaning, :example, :form)
-    end
+  def meaning_params
+    params.require(:word).permit(:figurative, :meaning, :example, :form)
+  end
 end
