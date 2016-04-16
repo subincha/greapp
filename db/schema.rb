@@ -22,12 +22,12 @@ ActiveRecord::Schema.define(version: 20160401063352) do
 
   create_table "meanings", force: :cascade do |t|
     t.integer  "word_id",    limit: 4
-    t.boolean  "figurative"
+    t.boolean  "figurative",               default: false
     t.string   "form",       limit: 255
     t.text     "meaning",    limit: 65535
     t.text     "example",    limit: 65535
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
   end
 
   add_index "meanings", ["word_id"], name: "index_meanings_on_word_id", using: :btree

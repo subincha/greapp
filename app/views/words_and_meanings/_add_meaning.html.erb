@@ -2,20 +2,20 @@
 	<tr>
 		<th>Figurative</th>
 		<td><%= f.radio_button(:figurative, "true",) %>True</td>
-		<td><%= f.radio_button(:figurative, "false", :checked => true) %>False</td>
+		<td><%= f.radio_button(:figurative, "false") %>False</td>
 	</tr>
 
 	<tr>
 		<th>Type</th>
-		<td><%= f.select(:form, ['adjective', 'adverb', 'noun', 'verb'], :selected => 'noun') %></td>
+		<td><%= f.select(:form, ['adj.', 'adv.', 'n.', 'v.', 'ph.', '']) %></td>
 	</tr>
 
 	<tr>
 		<th>Meaning</th>
-		<td><%= f.text_area(:meaning) %></td>
+		<td><%= f.text_area :meaning, :cols => 100, :rows => 5 %></td>
 	</tr>
 	<tr>
 		<th>Example</th>
-		<td><%= f.text_area(:example) %></td>
+		<td><%= f.text_area :example, :cols => 100, :rows => 5 %></td>
 	</tr>
 </table>

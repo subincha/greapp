@@ -37,6 +37,8 @@
 			</p>
 		<% end %>
 
-		<%= link_to("Add new meaning", {:controller => "meanings", :action => "new", :id => @word.id}) %>
+		<%= link_to("Add new meaning", {:controller => "meanings", :action => "new", :id => @word.id}) %></br>
+	</br>
+		<%= link_to("Add new word", {:controller => "words_and_meanings", :action => "new"}) %>
 	
 </div>

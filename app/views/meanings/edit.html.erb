@@ -1,7 +1,7 @@
 <div class = "subjects new">
 	<h2>Edit Meaning for</h2>
 	<p>Word : <%= @word.word %> </p>
-	<%= form_for(:meaning, :url => {:controller => 'meanings', :action => 'create', :id => @word.id}) do |f| %>
+	<%= form_for(:meaning, :url => {:controller => 'meanings', :action => 'update', :id => @meaning.id}) do |f| %>
 		<h3>Meaning</h3>
 		<%= render(:partial => "words_and_meanings/add_meaning", :locals => {:f => f}) %>
 

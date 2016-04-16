@@ -2,7 +2,7 @@ class CreateMeanings < ActiveRecord::Migration
   def change
     create_table :meanings do |t|
     	t.references :word
-    	t.boolean :figurative
+    	t.boolean :figurative, :default => false
     	t.string :form
     	t.text :meaning
     	t.text :example
